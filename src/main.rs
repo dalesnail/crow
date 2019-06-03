@@ -14,7 +14,7 @@ fn main() {
             .short("a")
             .long("alias")
             .value_name("FILE")
-            .help("Set an alias for your config files. Provide the entire file path")
+            .help("Set an alias for your config files. Provide the entire file path.")
             .takes_value(true))
        .get_matches();
 
