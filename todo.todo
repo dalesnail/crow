@@ -3,7 +3,7 @@
 My Initial Goals:
 	☐ Set up the initial version of the program - It will creat aliases to config files, through crow, that will open the configs in the default text editor. 
 	☐ Set up pull feature to pull files into a GNU Stow formatted folder Called a "nest", for easier management through stow. 
-	✔ Create tagging feature "Feathers" - will use commented out lines before the line to edit, will look for a feather --> "-<<<>":
+	☐ Create tagging feature "Feathers" - will use commented out lines before the line to edit, will look for a feather --> "-<<<>":
 		☐ Decide best practice for this feature, as it should not be overly used, and decide formatting of feather tag. 
 		☐ Create function to list all feathers in cli, with -<<<> before each line listed. 
 		☐ Figure out a way to impliment a cli edit of these tags, that is easy to use and not too verbose. 
