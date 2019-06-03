@@ -1,3 +1,5 @@
+// imports etc.
+mod aliases;
 #[macro_use]
 extern crate clap;
 use clap::{Arg, App, SubCommand};
@@ -17,6 +19,6 @@ fn main() {
        .get_matches();
 
     if let Some(alias) = crow.value_of("alias") {
-        println!("{}", alias);
+        aliases::run(alias.to_string());
     }
 }
