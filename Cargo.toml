@@ -1,0 +1,8 @@
+[package]
+name = "crow"
+version = "0.1.0"
+authors = ["dalesnail <cameronmills.work@gmail.com>"]
+edition = "2018"
+
+[dependencies]
+clap = "2"
