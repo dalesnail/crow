@@ -23,14 +23,22 @@ If not, see <https://www.gnu.org/licenses/>.")
        .arg(Arg::with_name("alias")
             .short("a")
             .long("alias")
-            .value_name("FILE")
+            .value_name("ALIAS")
+            .help("Set an alias for your config files. Provide the entire file path.")
+            .takes_value(true))
+       .arg(Arg::with_name("setalias")
+            .short("s")
+            .long("setalias")
+            .value_name("'ALIAS FILEPATH'")
             .help("Set an alias for your config files. Provide the entire file path.")
             .takes_value(true))
        .get_matches();
 
     // Pulls the given argument, and converts it into a string, to feed to aliases.rs. Will need to
     // update this later to write that string to a plain text file.
-    if let Some(alias) = crow.value_of("alias") {
-        aliases::run(alias.to_string());
+    if let Some(setalias) = crow.value_of("setalias") {
+        if let Some(alias) = crow.value_of("alias") {
+            aliases::definealias(alias.to_string(), setalias.to_string());
+        }
     }
 }
