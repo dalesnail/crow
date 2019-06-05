@@ -36,9 +36,15 @@ If not, see <https://www.gnu.org/licenses/>.")
 
     // Pulls the given argument, and converts it into a string, to feed to aliases.rs. Will need to
     // update this later to write that string to a plain text file.
+
     if let Some(setalias) = crow.value_of("setalias") {
         if let Some(alias) = crow.value_of("alias") {
             aliases::definealias(alias.to_string(), setalias.to_string());
         }
     }
+
+    if let Some(open) = crow.value_of("alias") {
+        println!("{}", open); 
+    }
+
 }
