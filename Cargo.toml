@@ -5,4 +5,5 @@ authors = ["dalesnail <cameronmills.work@gmail.com>"]
 edition = "2018"
 
 [dependencies]
+regex = "1"
 clap = "2"
