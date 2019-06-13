@@ -7,3 +7,5 @@ edition = "2018"
 [dependencies]
 regex = "1"
 clap = "2"
+open = "1.2.2"
+directories = "2.0"

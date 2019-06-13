@@ -1,0 +1,6 @@
+def-editor: nvim
+
+-<<<>  Testing: /this/is/a/test
+-<<<>  Testing2: //this/is/an/alias-file
+-<<<>  Test: /this/is/a/test
+-<<<>  crowfile: /home/dalesnail/rust/crow/target/debug/crowfile
