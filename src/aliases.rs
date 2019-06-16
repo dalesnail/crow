@@ -3,11 +3,10 @@ use std::io::{BufRead, BufReader, Write};
 use std::fs::OpenOptions;
 use std::process::Command;
 use std::path::PathBuf;
-use std::path::Path;
 extern crate directories;
-use directories::{BaseDirs, UserDirs, ProjectDirs};
+use directories::ProjectDirs;
 use std::string::String;
-use std::io::Read;
+//use std::io::Read;
 
 
 // I have tried a lot of things to get this to locate an existing alias, and change it in place,

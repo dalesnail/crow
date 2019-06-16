@@ -2,7 +2,7 @@
 mod aliases;
 #[macro_use]
 extern crate clap;
-use clap::{Arg, App, SubCommand};
+use clap::{Arg, App};
 
 fn main() {
     let crow = App::new("<>>>- Crow -<<<>")
