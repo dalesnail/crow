@@ -1,3 +1,14 @@
+<div align="center">
+
+  <h1>crow 🦀🦇</h1>
+
+  <p>
+    <strong>Crow manages files - Mostly .dot files - it packages those dotfiles in a nest managable through [gnustow](https://www.gnu.org/software/stow/) 📦</strong>
+  
+  _(Pretend the bat is a crow)_
+  </p>
+</div>
+
 # crow 🦀🦇
 
 _(Pretend the bat is a crow)_
