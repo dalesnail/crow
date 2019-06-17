@@ -8,7 +8,7 @@
   _(Pretend the bat is a crow)_
   
   </p>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="demo-crow.gif">
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="demo-crow.gif">
 </div>
 
 ---
