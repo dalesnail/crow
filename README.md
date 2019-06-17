@@ -8,7 +8,7 @@
   _(Pretend the bat is a crow)_
   
   </p>
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="demo-crow.gif">
+  &nbsp;&nbsp;&nbsp;&nbsp;<img src="demo-crow.gif">
 </div>
 
 ---
@@ -35,5 +35,3 @@ This is where [gnustow](https://www.gnu.org/software/stow/) 📦 comes into play
 This should create a symlink where the file was originally located, keeping your configuration intact without having to make a copy in another folder. 
 
 After this, simply `git init` your nest, and manage through github, gitlab, etc.
-
-![Demo](demo-crow.gif)
