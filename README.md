@@ -1,8 +1,21 @@
-# crow 🦀🦇
+<div align="center">
 
-_(Pretend the bat is a crow)_
+  <h1>crow 🦀🦇</h1>
 
-_Crow manages files - Mostly .dot files - it packages those dotfiles in a nest managable through [gnustow](https://www.gnu.org/software/stow/) 📦_
+  <p>
+    <strong>crow manages files - mostly .dot files</strong>
+  
+  _(Pretend the bat is a crow)_
+  
+  </p>
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src="demo-crow.gif">
+</div>
+
+---
+
+#### *Note - this is not currently in a state for other users, if you somehow manage to stumble upon this. It is currently just a personal project*
+
+---
 
 ### Workflow:
 #### To add a file to crow for management:
@@ -10,6 +23,10 @@ _Crow manages files - Mostly .dot files - it packages those dotfiles in a nest m
 - After this has completed you can open this file with `crow -a YourAlias`
 
 This feature is essentially like adding an alias to your .bashrc
+
+It adds alias entries to a file in your nest named 'crowfile'
+
+Formatted like so: `-<<<>  YourAlias: /path/to/your/alias`
 
 ----
 #### To pull those files into your "nest":
@@ -22,5 +39,3 @@ This is where [gnustow](https://www.gnu.org/software/stow/) 📦 comes into play
 This should create a symlink where the file was originally located, keeping your configuration intact without having to make a copy in another folder. 
 
 After this, simply `git init` your nest, and manage through github, gitlab, etc.
-
-![Demo](demo-crow.gif)
