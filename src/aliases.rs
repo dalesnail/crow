@@ -6,8 +6,7 @@ use std::path::PathBuf;
 extern crate directories;
 use directories::ProjectDirs;
 use std::string::String;
-//use std::io::Read;
-
+use std::fs;
 
 // I have tried a lot of things to get this to locate an existing alias, and change it in place,
 // but I cannot get that to work. I will need to learn more about this and try and get it working
@@ -17,17 +16,28 @@ pub fn definealias(alias: String, filepath: String) {
     if let Some(home) = ProjectDirs::from("com", "gnucrow", "crow") {
         let mut path = PathBuf::from(home.config_dir());
         path.push("crowfile");
-        let mut aliasfile = OpenOptions::new()
-            .read(true)
-            .append(true)
-            .open(&path)
-            .unwrap();
-        aliasfile.write_all(alias.as_bytes())
-            .expect("Could not write to file");
+        if path.exists() {
+            let mut aliasfile = OpenOptions::new()
+                .read(true)
+                .append(true)
+                .open(&path)
+                .unwrap();
+            aliasfile.write_all(alias.as_bytes())
+                .expect("Could not write to file");
+        } else {
+            fs::create_dir(&home.config_dir()).expect("Cannot create folder");
+            let _createcrowfile = File::create(&path);
+            let mut newfile = OpenOptions::new()
+                .read(true)
+                .append(true)
+                .open(&path)
+                .unwrap();
+            newfile.write_all(alias.as_bytes())
+                .expect("Could not write to file");
+            println!("Testing"); 
+        }
     }
-}
-
-
+} 
 pub fn openalias(alias: String) {
     let srchterm = "-<<<>  ".to_owned() + &alias + ": ";
     if let Some(home) = ProjectDirs::from("com", "gnucrow", "crow") {
