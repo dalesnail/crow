@@ -2,7 +2,6 @@
 
 _(Pretend the bat is a crow)_
 
-Crow manages configuring and organizing files - Mostly .dot files
----
+_Crow manages files - Mostly .dot files - It is best used in suppliment to 📦gnustow_
 
 ![Demo](demo-crow.gif)
