@@ -27,12 +27,11 @@ pub fn pull(alias: String) {
                         let chop = Regex::new(r"/(?:[^/]+)$").unwrap();
                         let choppedir = chop.replace(&newdir, "");
                         let finaldir = format!("{}", choppedir);
-                        println!("{}", newdir);
                         fs::create_dir_all(&finaldir).expect("Cannot Create Folder!");
                         let movefile = format!("{}{}", &home.home_dir().display(), aliaspath[0]);
-                        println!("{}", &movefile);
                         let options = CopyOptions::new();
                         move_file(&movefile, &newdir, &options).expect("Cannot move this file");
+                        println!("{} has been moved to: {}", &movefile, &newdir);
                     },
             Err(e) => panic!("Error reading file: {}", e)
                 }

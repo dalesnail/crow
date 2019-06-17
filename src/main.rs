@@ -26,7 +26,7 @@ fn main() {
             .short("P")
             .long("pull")
             .value_name("PULL FILES INTO CROWFILES")
-            .help("Takes the file listed for the named alias, and moves it to the crow managed folder")
+            .help("Takes the file listed for the named alias, and moves it to the nest")
             .takes_value(true))
             .get_matches();
 
