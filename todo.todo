@@ -1,8 +1,9 @@
 ===Initial thoughts and ideas for the project===
 
 My Initial Goals:
-	☐ Set up the initial version of the program - It will creat aliases to config files, through crow, that will open the configs in the default text editor. 
-	☐ Set up pull feature to pull files into a GNU Stow formatted folder Called a "nest", for easier management through stow. 
+	✔ Set up the initial version of the program - It will creat aliases to config files, through crow, that will open the configs in the default text editor.  @done(2019-06-16 22:42) @project(My Initial Goals)
+	☐ Find a way to detect duplicate alias setting, and either warn the user, or just replace the old with the new. 
+	✔ Set up pull feature to pull files into a GNU Stow formatted folder Called a "nest", for easier management through stow.  @done(2019-06-16 22:42) @project(My Initial Goals)
 	☐ Create tagging feature "Feathers" - will use commented out lines before the line to edit, will look for a feather --> "-<<<>":
 		☐ Decide best practice for this feature, as it should not be overly used, and decide formatting of feather tag. 
 		☐ Create function to list all feathers in cli, with -<<<> before each line listed. 
