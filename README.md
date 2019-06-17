@@ -3,7 +3,7 @@
   <h1>crow 🦀🦇</h1>
 
   <p>
-    <strong>manages files - Mostly .dot files - it packages those dotfiles in a nest managable through <a href="https://www.gnu.org/software/stow/">GNU Stow 📦</a></strong>
+    <strong>crow manages files - mostly .dot files</strong>
   
   _(Pretend the bat is a crow)_
   
