@@ -24,3 +24,6 @@ This should create a symlink where the file was originally located, keeping your
 After this, simply `git init` your nest, and manage through github, gitlab, etc.
 
 ![Demo](demo-crow.gif)
+
+
+### *Note - this is not currently in a state for use if you somehow manage to stumble upon this. It is currently just a personal project*
