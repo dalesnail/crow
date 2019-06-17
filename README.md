@@ -6,7 +6,7 @@ _Crow manages files - Mostly .dot files - it packages those dotfiles in a nest m
 
 ---
 
-#### *Note - this is not currently in a state for use if you somehow manage to stumble upon this. It is currently just a personal project*
+#### *Note - this is not currently in a state for other users, if you somehow manage to stumble upon this. It is currently just a personal project*
 
 ---
 
