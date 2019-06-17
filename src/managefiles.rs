@@ -12,7 +12,7 @@ pub fn pull(alias: String) {
     let srchterm = "-<<<>  ".to_owned() + &alias + ": ";
     if let Some(home) = UserDirs::new() {
         let mut path = PathBuf::from(home.home_dir());
-        path.push("crowfiles");
+        path.push("nest");
         let delimiter = format!("-<<<>  {}: {}", &alias, &home.home_dir().display());
         if let Some(crowfile) = ProjectDirs::from("come", "gnucrow", "crow") {
             let mut cfile = PathBuf::from(crowfile.config_dir());
