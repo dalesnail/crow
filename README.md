@@ -4,6 +4,8 @@ _(Pretend the bat is a crow)_
 
 _Crow manages files - Mostly .dot files - it packages those dotfiles in a nest managable through [gnustow](https://www.gnu.org/software/stow/) 📦_
 
+### *Note - this is not currently in a state for use if you somehow manage to stumble upon this. It is currently just a personal project*
+
 ### Workflow:
 #### To add a file to crow for management:
 - `crow -a YourAlias -s ~/path/to/your/file.conf`
@@ -24,6 +26,3 @@ This should create a symlink where the file was originally located, keeping your
 After this, simply `git init` your nest, and manage through github, gitlab, etc.
 
 ![Demo](demo-crow.gif)
-
-
-### *Note - this is not currently in a state for use if you somehow manage to stumble upon this. It is currently just a personal project*
