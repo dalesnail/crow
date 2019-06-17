@@ -2,7 +2,7 @@
 
 _(Pretend the bat is a crow)_
 
-_Crow manages files - Mostly .dot files - it packages those dotfiles in a nest managable through [gnustow](https://www.gnu.org/software/stow/) 📦_
+_Crow manages files - Mostly .dot files - it packages those (dot)files in a nest managable through [gnustow](https://www.gnu.org/software/stow/) 📦_
 
 #### Workflow:
 To add a file to crow for management:
