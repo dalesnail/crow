@@ -6,6 +6,8 @@
     <strong>manages files - Mostly .dot files - it packages those dotfiles in a nest managable through <a href="https://www.gnu.org/software/stow/">GNU Stow 📦</a></strong>
   
   _(Pretend the bat is a crow)_
+  
+  <img src="demo-crow.gif">
   </p>
 </div>
 
