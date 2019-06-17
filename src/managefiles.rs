@@ -5,8 +5,9 @@ extern crate directories;
 use directories::{UserDirs, ProjectDirs};
 use std::fs::File;
 extern crate regex;
+extern crate fs_extra;
 use regex::Regex;
-
+use fs_extra::file::{CopyOptions, move_file};
 
 pub fn pull(alias: String) {
     let srchterm = "-<<<>  ".to_owned() + &alias + ": ";
@@ -26,8 +27,12 @@ pub fn pull(alias: String) {
                         let chop = Regex::new(r"/(?:[^/]+)$").unwrap();
                         let choppedir = chop.replace(&newdir, "");
                         let finaldir = format!("{}", choppedir);
-                        println!("{}", choppedir);
+                        println!("{}", newdir);
                         fs::create_dir_all(&finaldir).expect("Cannot Create Folder!");
+                        let movefile = format!("{}{}", &home.home_dir().display(), aliaspath[0]);
+                        println!("{}", &movefile);
+                        let options = CopyOptions::new();
+                        move_file(&movefile, &newdir, &options).expect("Cannot move this file");
                     },
             Err(e) => panic!("Error reading file: {}", e)
                 }
