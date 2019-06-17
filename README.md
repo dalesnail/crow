@@ -24,7 +24,7 @@
 
 This feature is essentially like adding an alias to your .bashrc
 
-It adds alias entries to a file in your nest named 'crowfile'
+It adds alias entries to a file at ~/.config/crow/ named 'crowfile'
 
 Formatted like so: `-<<<>  YourAlias: /path/to/your/alias`
 
