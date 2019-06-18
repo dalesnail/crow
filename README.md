@@ -1,6 +1,6 @@
 <div align="center">
 
-  <h1>crow 🦇</h1>
+  <h1>🦀 crow 🦇</h1>
 
   <p>
     <strong>crow manages files - mostly .dot files</strong>
