@@ -4,7 +4,7 @@ use std::fs::OpenOptions;
 use std::process::Command;
 use std::path::PathBuf;
 extern crate directories;
-use directories::ProjectDirs;
+use directories::{ProjectDirs, UserDirs};
 use std::string::String;
 use std::fs;
 
@@ -60,3 +60,42 @@ pub fn openalias(alias: String) {
             }
         }
     }
+
+pub fn definegroup(group: String) {
+    let groupalias = "-<<<+>  ".to_owned() + &group + ": ";
+    if let Some(home) = UserDirs::new() {
+        let mut path = PathBuf::from(home.home_dir());
+        path.push("nest");
+        let groupdir = format!("{}/{}", &path.display(), &group);
+        let writega = format!("{}{}\n", &groupalias, &groupdir);
+        if let Some(crowfile) = ProjectDirs::from("com", "gnucrow", "crow") {
+            let mut cpath = PathBuf::from(crowfile.config_dir());
+            cpath.push("crowfile");
+            if cpath.exists() {
+                let mut aliasfile = OpenOptions::new()
+                    .read(true)
+                    .append(true)
+                    .open(&cpath)
+                    .unwrap();
+                aliasfile.write_all(writega.as_bytes())
+                    .expect("Could not write to file");
+                fs::create_dir_all(&groupdir).expect("could not create folder!");
+            } else {
+                fs::create_dir(&crowfile.config_dir()).expect("Cannot create folder");
+                let _createcrowfile = File::create(&path);
+                let mut newfile = OpenOptions::new()
+                    .read(true)
+                    .append(true)
+                    .open(&cpath)
+                    .unwrap();
+                newfile.write_all(writega.as_bytes())
+                    .expect("Could not write to file");
+                println!("Testing"); 
+                fs::create_dir_all(&groupdir).expect("could not create folder!");
+            }
+        }
+    }
+}
+
+
+

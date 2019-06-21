@@ -28,15 +28,25 @@ fn main() {
             .value_name("PULL FILES INTO CROWFILES")
             .help("Takes the file listed for the named alias, and moves it to the nest")
             .takes_value(true))
+       .arg(Arg::with_name("setgroup")
+            .short("G")
+            .long("gset")
+            .value_name("GROUP ALIAS")
+            .help("Establishes a new group alias an creates the group dir in your nest")
+            .takes_value(true))
             .get_matches();
 
-    
+
+    // Functions used for arguments 
+
     if let (Some(setalias), Some(alias)) = (crow.value_of("setalias"), crow.value_of("alias")) {
             aliases::definealias(alias.to_string(), setalias.to_string());
     }else if let Some(open) = crow.value_of("alias") { 
         aliases::openalias(open.to_string()); 
     }else if let Some(pull) = crow.value_of("pull") {
         managefiles::pull(pull.to_string());
+    }else if let Some(gset) = crow.value_of("setgroup") {
+        aliases::definegroup(gset.to_string());
 
     }
 
