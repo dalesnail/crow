@@ -1,6 +1,6 @@
 <div align="center">
 
-  <h1>crow 🦀🦇</h1>
+  <h1>🦀 crow 🦇</h1>
 
   <p>
     <strong>crow manages files - mostly .dot files</strong>
@@ -24,7 +24,7 @@
 
 This feature is essentially like adding an alias to your .bashrc
 
-It adds alias entries to a file in your nest named 'crowfile'
+It adds alias entries to a file at ~/.config/crow/ named 'crowfile'
 
 Formatted like so: `-<<<>  YourAlias: /path/to/your/alias`
 
@@ -39,3 +39,7 @@ This is where [gnustow](https://www.gnu.org/software/stow/) 📦 comes into play
 This should create a symlink where the file was originally located, keeping your configuration intact without having to make a copy in another folder. 
 
 After this, simply `git init` your nest, and manage through github, gitlab, etc.
+
+---
+
+_**Regarding the pull feature here**, it currently only pulls one file and makes a directory for that file. Thinking about it, that may not be ideal in some cases, so I am going to write a "pull all" feature into this as well, that will pull all files and directories that exist within the aliasfiles current directory. This should be fine with any number of files since stow will just symlink anything in the folder._
