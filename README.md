@@ -1,3 +1,4 @@
+
 <div align="center">
 
   <h1>🦀 crow 🦇</h1>
@@ -41,6 +42,28 @@ This should create a symlink where the file was originally located, keeping your
 After this, simply `git init` your nest, and manage through github, gitlab, etc.
 
 ---
+#### Groups!
+Groups are for managing a subset of files, rather than one single file. An example might be managing all of your X files (_I want to believe 👽_). Simply set up a group name for the files, in the example we will call it xgroup. 
+
+To establish the group:
+
+- `crow -G xgroup`
+
+This will write the group alias to your crowfile, and will create a sub-directory with the groups name in your nest. 
+
+To pull files into that sub-directory:
+- `crow -a filealias -g xgroup`
+
+After the group is set and the files are pulled in, stow it same as any other alias directory:
+
+- `cd ~/nest`
+- `stow xgroup`
+
+Another good example use for this would be to establish system config "Profiles" to deploy whenever you feel like trying or creating a new config. Just establish a group directory: `crow -G Profile1`, stow all of your current configs in it with crow, push out the entire directory with stow, and when you feel like resetting to default, just `stow -D Profile1 && stow Profile2`.  
+
+_Experiment, but be careful._
+
+---
 
 ### Updates and things to change
 
@@ -50,8 +73,8 @@ Pull all feature was deemed dangerous and not flexible. Moved towards a new idea
 
 This will be better for programs that require more than one config file, but it can also be used to manage a small subset of files for anything really. 
 
-A good example use for this would be to establish system config "Profiles" to deploy whenever you feel like trying or creating a new rice. Just establish a directory `crow -G Profile1`, stow all of your current configs in here with crow, push out the entire directory with stow, and when you feel like resetting to default, just `stow -D Profile1 && stow Profile2`.  
+  
 
 _Got this functionality going. Once you set a group with `crow -G GroupAlias` you can now use `crow -a FileAlias -g GroupAlias` to move that file into the group folder._
 
-Also going to be setting up a command that will auto cd you into the group directory, just because. Not mega important, but I can see where I personally would use this. Will update this as I come up with ideas for this. 
+Also going to be setting up a command that will auto cd you into the group directory, just because. Not mega important, but I can see where I personally would use this. Will update this as I come up with ideas for this.
