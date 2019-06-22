@@ -21,7 +21,7 @@
 ### Workflow:
 #### To add a file to crow for management:
 - `crow -a YourAlias -s ~/path/to/your/file.conf`
-- After this has completed you can open this file with `crow -a YourAlias`
+- You can now open this file with `crow -a YourAlias`
 
 This feature is essentially like adding an alias to your .bashrc
 
