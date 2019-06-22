@@ -52,4 +52,6 @@ This will be better for programs that require more than one config file, but it 
 
 A good example use for this would be to establish system config "Profiles" to deploy whenever you feel like trying or creating a new rice. Just establish a directory `crow -G Profile1`, stow all of your current configs in here with crow, push out the entire directory with stow, and when you feel like resetting to default, just `stow -D Profile1 && stow Profile2`.  
 
+_Got this functionality going. Once you set a group with `crow -G GroupAlias` you can now use `crow -a FileAlias -g GroupAlias` to move that file into the group folder._
+
 Also going to be setting up a command that will auto cd you into the group directory, just because. Not mega important, but I can see where I personally would use this. Will update this as I come up with ideas for this. 

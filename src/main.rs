@@ -34,6 +34,12 @@ fn main() {
             .value_name("GROUP ALIAS")
             .help("Establishes a new group alias an creates the group dir in your nest")
             .takes_value(true))
+       .arg(Arg::with_name("group")
+            .short("g")
+            .long("group")
+            .value_name("GROUP ALIAS")
+            .help("Argument for group alias, will cd into groups directory with no other arguments")
+            .takes_value(true))
             .get_matches();
 
 
@@ -41,12 +47,15 @@ fn main() {
 
     if let (Some(setalias), Some(alias)) = (crow.value_of("setalias"), crow.value_of("alias")) {
             aliases::definealias(alias.to_string(), setalias.to_string());
+    }else if let (Some(alias), Some(group)) = (crow.value_of("alias"), crow.value_of("group")) {
+            managefiles::groupull(alias.to_string(), group.to_string());
     }else if let Some(open) = crow.value_of("alias") { 
         aliases::openalias(open.to_string()); 
     }else if let Some(pull) = crow.value_of("pull") {
         managefiles::pull(pull.to_string());
     }else if let Some(gset) = crow.value_of("setgroup") {
         aliases::definegroup(gset.to_string());
+
 
     }
 
