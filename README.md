@@ -67,14 +67,6 @@ _Experiment, but be careful._
 
 ### Updates and things to change
 
-~~_**Regarding the pull feature here**, it currently only pulls one file and makes a directory for that file. Thinking about it, that may not be ideal in some cases, so I am going to write a "pull all" feature into this as well, that will pull all files and directories that exist within the aliasfiles current directory. This should be fine with any number of files since stow will just symlink anything in the folder._~~
-
-Pull all feature was deemed dangerous and not flexible. Moved towards a new idea that has been working well. Added a feature that will establish a Group alias, and create a directory for that alias in your nest. I will be writing a few options to be able to pull files into those group folders rather than one single dir assigned to the file alias. 
-
-This will be better for programs that require more than one config file, but it can also be used to manage a small subset of files for anything really. 
-
-  
-
-_Got this functionality going. Once you set a group with `crow -G GroupAlias` you can now use `crow -a FileAlias -g GroupAlias` to move that file into the group folder._
+_Got group functionality going. Once you set a group with `crow -G GroupAlias` you can now use `crow -a FileAlias -g GroupAlias` to move that file into the group folder._
 
 Also going to be setting up a command that will auto cd you into the group directory, just because. Not mega important, but I can see where I personally would use this. Will update this as I come up with ideas for this.
