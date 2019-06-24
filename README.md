@@ -1,3 +1,4 @@
+
 <div align="center">
 
   <h1>🦀 crow 🦇</h1>
@@ -20,7 +21,7 @@
 ### Workflow:
 #### To add a file to crow for management:
 - `crow -a YourAlias -s ~/path/to/your/file.conf`
-- After this has completed you can open this file with `crow -a YourAlias`
+- You can now open this file with `crow -a YourAlias`
 
 This feature is essentially like adding an alias to your .bashrc
 
@@ -41,16 +42,34 @@ This should create a symlink where the file was originally located, keeping your
 After this, simply `git init` your nest, and manage through github, gitlab, etc.
 
 ---
+#### Groups!
+Groups are for managing a subset of files, rather than one single file. An example might be managing all of your X files (_I want to believe 👽_). Simply set up a group name for the files, in the example we will call it xgroup. 
+
+To establish the group:
+
+- `crow -G xgroup`
+
+This will write the group alias to your crowfile, and will create a sub-directory with the groups name in your nest. 
+
+To pull files into that sub-directory:
+- `crow -a filealias -g xgroup`
+
+After the group is set and the files are pulled in, stow it same as any other alias directory:
+
+- `cd ~/nest`
+- `stow xgroup`
+
+Another good example use for this would be to establish system config "Profiles" to deploy whenever you feel like trying or creating a new config. Just establish a group directory: `crow -G Profile1`, stow all of your current configs in it with crow, push out the entire directory with stow, and when you feel like trying another setup, just `stow -D Profile1 && stow Profile2`.  
+
+_Experiment, but be careful._
+
+---
 
 ### Updates and things to change
 
-~~_**Regarding the pull feature here**, it currently only pulls one file and makes a directory for that file. Thinking about it, that may not be ideal in some cases, so I am going to write a "pull all" feature into this as well, that will pull all files and directories that exist within the aliasfiles current directory. This should be fine with any number of files since stow will just symlink anything in the folder._~~
+_Got group functionality going. Once you set a group with `crow -G GroupAlias` you can now use `crow -a FileAlias -g GroupAlias` to move that file into the group folder._
 
-Pull all feature was deemed dangerous and not flexible. Moved towards a new idea that has been working well. Added a feature that will establish a Group alias, and create a directory for that alias in your nest. I will be writing a few options to be able to pull files into those group folders rather than one single dir assigned to the file alias. 
-
-This will be better for programs that require more than one config file, but it can also be used to manage a small subset of files for anything really. 
-
-A good example use for this would be to establish system config "Profiles" to deploy whenever you feel like trying or creating a new rice. Just establish a directory `crow -G Profile1`, stow all of your current configs in here with crow, push out the entire directory with stow, and when you feel like resetting to default, just `stow -D Profile1 && stow Profile2`.  
-
-_Got this functionality going. Once you set a group with `crow -G GroupAlias` you can now use `crow -a FileAlias -g GroupAlias` to move that file into the group folder._
-
+<<<<<<< HEAD
+=======
+Also going to be setting up a command that will auto cd you into the group directory, just because. Not mega important, but I can see where I personally would use this. Will update this as I come up with ideas for this.
+>>>>>>> 0222266c8ae69e557bd68c2d67960ad77e5e7ca1
