@@ -68,8 +68,3 @@ _Experiment, but be careful._
 ### Updates and things to change
 
 _Got group functionality going. Once you set a group with `crow -G GroupAlias` you can now use `crow -a FileAlias -g GroupAlias` to move that file into the group folder._
-
-<<<<<<< HEAD
-=======
-Also going to be setting up a command that will auto cd you into the group directory, just because. Not mega important, but I can see where I personally would use this. Will update this as I come up with ideas for this.
->>>>>>> 0222266c8ae69e557bd68c2d67960ad77e5e7ca1
