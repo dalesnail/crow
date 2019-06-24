@@ -59,7 +59,7 @@ After the group is set and the files are pulled in, stow it same as any other al
 - `cd ~/nest`
 - `stow xgroup`
 
-Another good example use for this would be to establish system config "Profiles" to deploy whenever you feel like trying or creating a new config. Just establish a group directory: `crow -G Profile1`, stow all of your current configs in it with crow, push out the entire directory with stow, and when you feel like resetting to default, just `stow -D Profile1 && stow Profile2`.  
+Another good example use for this would be to establish system config "Profiles" to deploy whenever you feel like trying or creating a new config. Just establish a group directory: `crow -G Profile1`, stow all of your current configs in it with crow, push out the entire directory with stow, and when you feel like trying another setup, just `stow -D Profile1 && stow Profile2`.  
 
 _Experiment, but be careful._
 
