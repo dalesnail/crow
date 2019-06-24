@@ -56,7 +56,6 @@ fn main() {
     }else if let Some(gset) = crow.value_of("setgroup") {
         aliases::definegroup(gset.to_string());
 
-
     }
 
 }

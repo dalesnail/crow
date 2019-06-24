@@ -98,4 +98,3 @@ pub fn definegroup(group: String) {
 }
 
 
-
