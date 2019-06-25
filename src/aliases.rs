@@ -32,7 +32,7 @@ pub fn definealias(alias: String, filepath: String) {
                 .append(true)
                 .open(&path)
                 .unwrap();
-            let init = format!("Editor: nvim\n# The above line is for declaring your editor, line should stay at the very top\n-<<<>  crowfile: {}\n{}", &path.display(), &alias);
+            let init = format!("Editor: vim\n# The above line is for declaring your editor, line should stay at the very top\n-<<<>  crowfile: {}\n{}", &path.display(), &alias);
             newfile.write_all(init.as_bytes())
                 .expect("Could not write to file");
             println!("Testing"); 
