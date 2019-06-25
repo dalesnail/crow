@@ -25,7 +25,7 @@
 - Untar the file wherever you would like
 - Move or copy the crow binary to your runpath (ex. `cp ./crow /usr/local/bin/`)
 
-#### Init crow
+#### Init for first time use
 - `crow -i`
 
 This will set up the necessary files and directories for crow. It will create a "nest" in your home directory, and will generate the crowfile at `~/.config/crowfile`. This file will hold all of your aliases, as well as your default editor you would like for your files to be opened in. After creating your alias, `crow -a crowfile` will open your crowfile, and you can change what editor you will use. It defaults to Vim currently.
