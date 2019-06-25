@@ -25,7 +25,7 @@
 
 This feature is essentially like adding an alias to your .bashrc
 
-_When you create your first alias your "crowfile" will be generated. This will hold all of your aliases, as well as your default editor you would like for your files to be opened in. After creating your alias, `crow -a crowfile` will open your crowfile, and you can change what editor you will use. It defaults to Vim currently._
+_When you create your first alias, your "crowfile" will be generated. This file will hold all of your aliases, as well as your default editor you would like for your files to be opened in. After creating your alias, `crow -a crowfile` will open your crowfile, and you can change what editor you will use. It defaults to Vim currently._
 
 ----
 #### To pull those files into your "nest":
