@@ -19,13 +19,24 @@
 ---
 
 ### Workflow:
+
+#### To install
+- Download the latest [release](https://github.com/dalesnail/crow/releases)
+- Untar the file wherever you would like
+- Move or copy the crow binary to your runpath (ex. `cp ./crow /usr/local/bin/`)
+
+#### Init crow
+- `crow -i`
+
+This will set up the necessary files and directories for crow. It will create a "nest" in your home directory, and will generate the crowfile at `~/.config/crowfile`. This file will hold all of your aliases, as well as your default editor you would like for your files to be opened in. After creating your alias, `crow -a crowfile` will open your crowfile, and you can change what editor you will use. It defaults to Vim currently.
+
 #### To add a file to crow for management:
 - `crow -a YourAlias -s ~/path/to/your/file.conf`
 - You can now open this file with `crow -a YourAlias`
 
 This feature is essentially like adding an alias to your .bashrc
 
-_When you create your first alias, your "crowfile" will be generated. This file will hold all of your aliases, as well as your default editor you would like for your files to be opened in. After creating your alias, `crow -a crowfile` will open your crowfile, and you can change what editor you will use. It defaults to Vim currently._
+_When you create your first alias, if you have not initiated, your "crowfile" will be generated. _
 
 ----
 #### To pull those files into your "nest":
