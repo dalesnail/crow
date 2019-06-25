@@ -30,6 +30,8 @@
 
 This will set up the necessary files and directories for crow. It will create a "nest" in your home directory, and will generate the crowfile at `~/.config/crowfile`. This file will hold all of your aliases, as well as your default editor you would like for your files to be opened in. After creating your alias, `crow -a crowfile` will open your crowfile, and you can change what editor you will use. It defaults to Vim currently.
 
+---
+
 #### To add a file to crow for management:
 - `crow -a YourAlias -s ~/path/to/your/file.conf`
 - You can now open this file with `crow -a YourAlias`
@@ -38,6 +40,7 @@ This feature is essentially like adding an alias to your .bashrc
 
 _When you create your first alias, if you have not initiated, your "crowfile" will be generated. _
 
+---
 
 #### To pull those files into your "nest":
 - `crow -P YourAlias`
@@ -50,6 +53,7 @@ This should create a symlink where the file was originally located, keeping your
 
 After this, simply `git init` your nest, and manage through github, gitlab, etc.
 
+---
 
 #### Groups!
 Groups are for managing a subset of files, rather than one single file. An example might be managing all of your X files (_I want to believe 👽_). Simply set up a group name for the files, in the example we will call it xgroup. 
