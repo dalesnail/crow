@@ -18,14 +18,14 @@
 
 ---
 
-### Workflow:
-
 #### To install
 - Download the latest [release](https://github.com/dalesnail/crow/releases)
 - Untar the file wherever you would like
 - Move or copy the crow binary to your runpath (ex. `cp ./crow /usr/local/bin/`)
 
 ---
+
+### Workflow:
 
 #### Init for first time use
 - `crow -i`
