@@ -25,6 +25,8 @@
 - Untar the file wherever you would like
 - Move or copy the crow binary to your runpath (ex. `cp ./crow /usr/local/bin/`)
 
+---
+
 #### Init for first time use
 - `crow -i`
 
