@@ -38,7 +38,7 @@ This feature is essentially like adding an alias to your .bashrc
 
 _When you create your first alias, if you have not initiated, your "crowfile" will be generated. _
 
-----
+
 #### To pull those files into your "nest":
 - `crow -P YourAlias`
 
@@ -50,7 +50,7 @@ This should create a symlink where the file was originally located, keeping your
 
 After this, simply `git init` your nest, and manage through github, gitlab, etc.
 
----
+
 #### Groups!
 Groups are for managing a subset of files, rather than one single file. An example might be managing all of your X files (_I want to believe 👽_). Simply set up a group name for the files, in the example we will call it xgroup. 
 
