@@ -14,7 +14,7 @@
 
 ---
 
-#### *Note - this is not currently in a state for other users, if you somehow manage to stumble upon this. It is currently just a personal project*
+#### *Note - this is in testing currently, so it may be buggy. Also always back up any files managed through crow, even though there should not be any danger to your files. I will be writing in a backup feature for the dots at some point, so we don't have to worry about this.*
 
 ---
 
