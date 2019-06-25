@@ -35,7 +35,6 @@ pub fn definealias(alias: String, filepath: String) {
             let init = format!("Editor: vim\n# The above line is for declaring your editor, line should stay at the very top\n-<<<>  crowfile: {}\n{}", &path.display(), &alias);
             newfile.write_all(init.as_bytes())
                 .expect("Could not write to file");
-            println!("Testing"); 
         }
     }
 } 
@@ -58,7 +57,6 @@ pub fn openalias(alias: String) {
                             .arg(file)
                             .status()
                             .expect("Something went wrong.");
-                        println!("Path: {:?}", &editor);
                     },
             Err(e) => panic!("Error reading file: {}", e)
                 }
@@ -95,7 +93,6 @@ pub fn definegroup(group: String) {
                     .unwrap();
                 newfile.write_all(writega.as_bytes())
                     .expect("Could not write to file");
-                println!("Testing"); 
                 fs::create_dir_all(&groupdir).expect("could not create folder!");
             }
         }
