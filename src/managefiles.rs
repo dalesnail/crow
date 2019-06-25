@@ -8,7 +8,6 @@ extern crate regex;
 extern crate fs_extra;
 use regex::Regex;
 use fs_extra::file::{CopyOptions, move_file};
-use std::path::Path; 
 
 pub fn pull(alias: String) {
     let srchterm = "-<<<>  ".to_owned() + &alias + ": ";

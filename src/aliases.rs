@@ -32,7 +32,8 @@ pub fn definealias(alias: String, filepath: String) {
                 .append(true)
                 .open(&path)
                 .unwrap();
-            newfile.write_all(alias.as_bytes())
+            let init = format!("Editor: nvim\n# The above line is for declaring your editor, line should stay at the very top\n-<<<>  crowfile: {}\n{}", &path.display(), &alias);
+            newfile.write_all(init.as_bytes())
                 .expect("Could not write to file");
             println!("Testing"); 
         }
@@ -44,16 +45,20 @@ pub fn openalias(alias: String) {
         let mut path = PathBuf::from(home.config_dir());
         path.push("crowfile");
         let aliasfile = BufReader::new(File::open(&path).unwrap());
-            for line in aliasfile.lines() {
+        let mut lines = aliasfile.lines();
+        let editor_line = &lines.next().unwrap().expect("Error");
+        let editor_vec: Vec<_> = editor_line.split(": ").collect();
+        let editor = &editor_vec[1];
+            for line in lines {
                 match line { 
                     Ok(line) => if line.starts_with(&srchterm) {
                         let aliaspath: Vec<_> = line.split(": ").collect();
                         let file = &aliaspath[1]; 
-                        Command::new("nvim")
+                        Command::new(&editor)
                             .arg(file)
                             .status()
                             .expect("Something went wrong.");
-                        println!("Path: {:?}", &path);
+                        println!("Path: {:?}", &editor);
                     },
             Err(e) => panic!("Error reading file: {}", e)
                 }
@@ -96,5 +101,3 @@ pub fn definegroup(group: String) {
         }
     }
 }
-
-
