@@ -40,6 +40,10 @@ fn main() {
             .value_name("GROUP ALIAS")
             .help("Argument for group alias, will cd into groups directory with no other arguments")
             .takes_value(true))
+       .arg(Arg::with_name("init")
+            .short("i")
+            .long("init")
+            .help("Creates reference files and directories for crow"))
             .get_matches();
 
 
@@ -55,6 +59,8 @@ fn main() {
         managefiles::pull(pull.to_string());
     }else if let Some(gset) = crow.value_of("setgroup") {
         aliases::definegroup(gset.to_string());
+    }else if crow.is_present("init") {
+        aliases::init();
 
     }
 

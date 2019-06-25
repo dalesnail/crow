@@ -84,7 +84,7 @@ pub fn definegroup(group: String) {
                     .expect("Could not write to file");
                 fs::create_dir_all(&groupdir).expect("could not create folder!");
             } else {
-                fs::create_dir(&crowfile.config_dir()).expect("Cannot create folder");
+                fs::create_dir_all(&crowfile.config_dir()).expect("Cannot create folder");
                 let _createcrowfile = File::create(&path);
                 let mut newfile = OpenOptions::new()
                     .read(true)
@@ -98,3 +98,28 @@ pub fn definegroup(group: String) {
         }
     }
 }
+
+pub fn init() {
+    if let Some(home) = UserDirs::new() {
+        let mut path = PathBuf::from(home.home_dir());
+        path.push("nest");
+        let nestdir = format!("{}", &path.display());
+        if let Some(crowfile) = ProjectDirs::from("com", "gnucrow", "crow") {
+            let mut cpath = PathBuf::from(crowfile.config_dir());
+            cpath.push("crowfile");
+            fs::create_dir_all(&crowfile.config_dir()).expect("Cannot create folder");
+            let init = format!("Editor: vim\n# The above line is for declaring your editor, line should stay at the very top\n-<<<>  crowfile: {}", &cpath.display());
+            let _createcrowfile = File::create(&cpath);
+            let mut newfile = OpenOptions::new()
+                .read(true)
+                .append(true)
+                .open(&cpath)
+                .unwrap();
+            newfile.write_all(&init.as_bytes())
+                .expect("Could not write to file");
+            fs::create_dir_all(&nestdir).expect("could not create folder!");
+        }
+    }
+}
+
+
