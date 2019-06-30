@@ -40,7 +40,7 @@ This will set up the necessary files and directories for crow. It will create a 
 
 This feature is essentially like adding an alias to your .bashrc
 
-_When you create your first alias, if you have not initiated, your "crowfile" will be generated. _
+_When you create your first alias, if you have not initiated, your "crowfile" will be generated._
 
 ---
 
