@@ -18,14 +18,14 @@
 
 ---
 
-### Workflow:
-
 #### To install
 - Download the latest [release](https://github.com/dalesnail/crow/releases)
 - Untar the file wherever you would like
 - Move or copy the crow binary to your runpath (ex. `cp ./crow /usr/local/bin/`)
 
 ---
+
+### Workflow:
 
 #### Init for first time use
 - `crow -i`
@@ -40,7 +40,7 @@ This will set up the necessary files and directories for crow. It will create a 
 
 This feature is essentially like adding an alias to your .bashrc
 
-_When you create your first alias, if you have not initiated, your "crowfile" will be generated. _
+_When you create your first alias, if you have not initiated, your "crowfile" will be generated._
 
 ---
 
