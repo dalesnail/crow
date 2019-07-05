@@ -1,5 +1,6 @@
 use std::fs::File;
 use std::io::{BufRead, BufReader, Write};
+use std::io::prelude::*;
 use std::fs::OpenOptions;
 use std::process::Command;
 use std::path::PathBuf;
@@ -12,19 +13,28 @@ use std::fs;
 // but I cannot get that to work. I will need to learn more about this and try and get it working
 // at some point, but for now, all duplicates will need to be removed by hand.
 pub fn definealias(alias: String, filepath: String) {
-    let alias = "-<<<>  ".to_owned() + &alias + ": " + &filepath + "\n";
+    let aliaspath = "-<<<>  ".to_owned() + &alias + ": " + &filepath + "\n";
+    let check = format!("-<<<>  {}", &alias);
     if let Some(home) = ProjectDirs::from("com", "gnucrow", "crow") {
         let mut path = PathBuf::from(home.config_dir());
         path.push("crowfile");
         if path.exists() {
-            let mut aliasfile = OpenOptions::new()
-                .read(true)
-                .append(true)
-                .open(&path)
-                .unwrap();
-            aliasfile.write_all(alias.as_bytes())
-                .expect("Could not write to file");
-        } else {
+            let mut pathfile = File::open(&path).expect("Unable to read file!");
+            let mut contents = String::new();
+            pathfile.read_to_string(&mut contents).expect("Unable to read file!");
+            if contents.contains(&check) {
+                println!("Alias in use!");
+            } else {
+                let mut aliasfile = OpenOptions::new()
+                    .read(true)
+                    .append(true)
+                    .open(&path)
+                    .unwrap();
+                aliasfile.write_all(aliaspath.as_bytes())
+                    .expect("Could not write to file");
+            }
+
+        }else{
             fs::create_dir(&home.config_dir()).expect("Cannot create folder");
             let _createcrowfile = File::create(&path);
             let mut newfile = OpenOptions::new()
@@ -32,12 +42,13 @@ pub fn definealias(alias: String, filepath: String) {
                 .append(true)
                 .open(&path)
                 .unwrap();
-            let init = format!("Editor: vim\n# The above line is for declaring your editor, line should stay at the very top\n-<<<>  crowfile: {}\n{}", &path.display(), &alias);
+            let init = format!("Editor: vim\n# The above line is for declaring your editor, line should stay at the very top\n-<<<>  crowfile: {}\n{}\n", &path.display(), &aliaspath);
             newfile.write_all(init.as_bytes())
                 .expect("Could not write to file");
         }
     }
-} 
+}
+
 pub fn openalias(alias: String) {
     let srchterm = "-<<<>  ".to_owned() + &alias + ": ";
     if let Some(home) = ProjectDirs::from("com", "gnucrow", "crow") {
@@ -108,7 +119,7 @@ pub fn init() {
             let mut cpath = PathBuf::from(crowfile.config_dir());
             cpath.push("crowfile");
             fs::create_dir_all(&crowfile.config_dir()).expect("Cannot create folder");
-            let init = format!("Editor: vim\n# The above line is for declaring your editor, line should stay at the very top\n-<<<>  crowfile: {}", &cpath.display());
+            let init = format!("Editor: vim\n# The above line is for declaring your editor, line should stay at the very top\n-<<<>  crowfile: {}\n", &cpath.display());
             let _createcrowfile = File::create(&cpath);
             let mut newfile = OpenOptions::new()
                 .read(true)

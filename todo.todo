@@ -11,4 +11,6 @@ My Initial Goals:
 	☐ Create a previous versions method when editing the files through crow, that are timestamped and easy to restore. (Consider implimenting this through 'diff'):
 		☐ Subfuction of this to be able to determine how many backups are kept, default being one. 
 
-
+Small goals for quality of life improvements:
+	☐ '-l' - List function, to list out all aliases, possibly groups too, but the groups list would not be as useful.
+	☐ Needs more checks to see if groups of aliases already exist. Could not find a safe way to remove if detected, but can present a warning. 
