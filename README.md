@@ -83,3 +83,5 @@ _Experiment, but be careful._
 ### Updates and things to change
 
 _Got group functionality going. Once you set a group with `crow -G GroupAlias` you can now use `crow -a FileAlias -g GroupAlias` to move that file into the group folder._
+
+_Init was generating without a proper new line, so the first alias made was not set up properly. Fixed this, and added in a check for aliases already in use, in the set alias feature_
